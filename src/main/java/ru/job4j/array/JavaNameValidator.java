@@ -5,45 +5,31 @@ public class JavaNameValidator {
         boolean valid = true;
         if (name.isEmpty() || Character.isDigit(name.charAt(0)) || Character.isUpperCase(name.charAt(0))) {
             valid = false;
-        }
-        for (int i = 0; i < name.length() && valid == true; i++) {
-           if (isLowerLatinLetter(name.codePointAt(i))) {
-                valid = true;
-           } else if (isUpperLatinLetter(name.codePointAt(i))) {
-                valid = true;
-           } else if (isSpecialSymbol(name.codePointAt(i))) {
-                valid = true;
-           } else if (Character.isDigit(name.charAt(i))) {
-                valid = true;
-           } else {
-               valid = false;
-               break;
-           }
+        } else {
+            for (int i = 0; i < name.length() && valid; i++) {
+                if (isLowerLatinLetter(name.codePointAt(i)) ||
+                        isUpperLatinLetter(name.codePointAt(i)) ||
+                        isSpecialSymbol(name.codePointAt(i)) ||
+                        Character.isDigit(name.charAt(i))) {
+                    valid = true;
+                } else {
+                    valid = false;
+                    break;
+                }
+            }
         }
         return valid;
     }
 
     public static boolean isSpecialSymbol(int code) {
-        boolean valid = false;
-        if (code == 36 || code == 95) {
-                valid = true;
-        }
-        return valid;
+        return (code == 36 || code == 95);
     }
 
     public static boolean isUpperLatinLetter(int code) {
-        boolean valid = false;
-        if (code >= 65 && code <= 90) {
-            valid = true;
-        }
-        return valid;
+        return (code >= 65 && code <= 90);
     }
 
     public static boolean isLowerLatinLetter(int code) {
-        boolean valid = false;
-        if (code >= 97 && code <= 122) {
-            valid = true;
-        }
-        return valid;
+        return (code >= 97 && code <= 122);
     }
 }
