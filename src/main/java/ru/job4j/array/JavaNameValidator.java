@@ -7,14 +7,6 @@ public class JavaNameValidator {
                 || Character.isDigit(name.charAt(0))
                 || Character.isUpperCase(name.charAt(0))) {
             valid = false;
-        } else {
-            for (int i = 0; i < name.length() && valid; i++) {
-                    valid = (isLowerLatinLetter(name.codePointAt(i))
-                            || isUpperLatinLetter(name.codePointAt(i))
-                            || isSpecialSymbol(name.codePointAt(i))
-                            || Character.isDigit(name.charAt(i)));
-                    break;
-            }
         }
         return valid;
     }
