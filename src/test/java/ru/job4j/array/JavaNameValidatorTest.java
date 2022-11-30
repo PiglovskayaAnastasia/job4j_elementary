@@ -45,4 +45,9 @@ public class JavaNameValidatorTest {
     void whenLatNumberAndTwoSpecialSymbolsUnderValid() {
         assertThat(isNameValid("fir$t_u$er_1")).isTrue();
     }
+
+    @Test
+    void whenFirstLatinUpperCaseIsInvalid1() {
+        assertThat(isNameValid("fРусские_буквы")).isFalse();
+    }
 }
