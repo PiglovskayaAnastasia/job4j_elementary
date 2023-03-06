@@ -41,4 +41,14 @@ public class MaxTest {
         int expected = 50;
         assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    public void whenMax1To1To5Then5() {
+        int left = 1;
+        int right = 1;
+        int top = 5;
+        int result = Max.max(left, right, top);
+        int expected = 5;
+        assertThat(result).isEqualTo(expected);
+    }
 }

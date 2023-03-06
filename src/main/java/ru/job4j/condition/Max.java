@@ -11,7 +11,7 @@ public class Max {
     }
 
     public static void main(String[] args) {
-        int total = Max.max(10, 15);
+        int total = Max.max(10, 16);
         System.out.println(total);
     }
 }
