@@ -41,7 +41,7 @@ public class PointTest {
     }
 
     @Test
-    public void when123to222then2() {
+    public void when224to222then2() {
         Point a = new Point(2, 2, 4);
         Point b = new Point(2, 2, 2);
         double expected = 2;
